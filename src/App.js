@@ -1,9 +1,17 @@
-
 import { useEffect } from 'react';
 import axios from 'axios'
 import './App.css';
 import { useState } from 'react';
 import YouTube from 'react-youtube';
+
+import * as React from 'react';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import StarIcon from '@mui/icons-material/Star';
 
 function App() {
   const API_URL = "https://api.themoviedb.org/3";
@@ -39,7 +47,7 @@ function App() {
     setMovie(results[0]);
 
     if (results.length) {
-      await fetchMovie(results[0].id);
+      await fetchMovie(results[3].id);
     }
   };
 
@@ -83,48 +91,24 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <h2 className="text-center mt-5 mb-5">Trailer Popular Movies</h2>
+    <Box>
+      <h2 className="text-center mt-5 mb-5">Most popular Movies</h2>
 
       {/* el buscador */}
       <form className="container mb-4" onSubmit={searchMovies}>
         <input
           type="text"
-          placeholder="search"
+          placeholder="Search"
           onChange={(e) => setSearchKey(e.target.value)}
         />
-        <button className="btn btn-primary">Search</button>
+        <Button sx={{ backgroundColor: 'primary.button' }}>Search</Button>
       </form>
 
-      {/* contenedor para previsualizar  */}
-      {/* <div>
-        <div
-          className="viewtrailer"
-          style={{
-            backgroundImage: `url("${IMAGE_PATH}${movie.backdrop_path}")`,
-          }}
-        >
-          
-          
-
-          <div className="container">
-
-            
-            
-            <button className="boton">Play Trailer</button>
-            <h1 className="text-white">{movie.title}</h1>
-            {movie.overview ? (
-              <p className="text-white">{movie.overview}</p>
-            ) : null}
-          </div>
-        </div>
-      </div> */}
-
-      {/* esto es por prueba */}
-      <div>
+    {/* esto es por prueba */}
+      <Box>
         <main>
           {movie ? (
-            <div
+            <Box
               className="viewtrailer"
               style={{
                 backgroundImage: `url("${IMAGE_PATH}${movie.backdrop_path}")`,
@@ -151,55 +135,69 @@ function App() {
                       },
                     }}
                   />
-                  <button onClick={() => setPlaying(false)} className="boton">
+                  <Button onClick={() => setPlaying(false)} className="boton">
                     Close
-                  </button>
+                  </Button>
                 </>
               ) : (
-                <div className="container">
-                  <div className="">
+                <Box className="container">
+                  <Box className="">
                     {trailer ? (
-                      <button
+                      <Button
                         className="boton"
                         onClick={() => setPlaying(true)}
                         type="button"
                       >
                         Play Trailer
-                      </button>
+                      </Button>
                     ) : (
                       "Sorry, no trailer available"
                     )}
                     <h1 className="text-white">{movie.title}</h1>
                     <p className="text-white">{movie.overview}</p>
-                  </div>
-                </div>
+                  </Box>
+                </Box>
               )}
-            </div>
+            </Box>
           ) : null}
         </main>
-      </div>
+      </Box>
 
       {/* contenedor para mostrar los posters y las peliculas en la peticion a la api */}
-      <div className="container mt-3">
-        <div className="row">
+      <Box className="container mt-3">
+        <Box className="row">
           {movies.map((movie) => (
-            <div
+            <Box
               key={movie.id}
               className="col-md-4 mb-3"
               onClick={() => selectMovie(movie)}
             >
-              <img
-                src={`${URL_IMAGE + movie.poster_path}`}
-                alt=""
-                height={600}
-                width="100%"
-              />
-              <h4 className="text-center">{movie.title}</h4>
-            </div>
+              <Card sx={{ maxWidth: 600 }}>
+                <CardMedia
+                  component="img"
+                  alt="Movie"
+                  height="250"
+                  src={`${URL_IMAGE + movie.poster_path}`}
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div">
+                  {movie.title}
+                  </Typography>
+                  <Box sx={{ marginRight: 1, display: 'flex', marginLeft: 2 }}>                 
+                    <Typography gutterBottom variant="h7" component="div">
+                    {movie.vote_average}
+                    </Typography>
+                    <Box>
+                      <StarIcon sx={{ color: 'primary.star' }}></StarIcon>
+                    </Box>
+                  </Box>
+                </CardContent>
+              </Card>
+            </Box>
           ))}
-        </div>
-      </div>
-    </div>
+        </Box>
+      </Box>
+    </Box>
   );
 }
 
