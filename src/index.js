@@ -11,7 +11,7 @@ const theme = createTheme({
       main: '#121212',
       light: 'rgba(255, 255, 255, 0.08)',
       star: '#ffea00',
-      button: '#0288d1'
+      button: '#0288d1',
     },
     secondary: {
       main: '#bdbdbd',

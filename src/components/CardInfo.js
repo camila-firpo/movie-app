@@ -59,7 +59,7 @@ const CardInfo = () => {
 
     return (
         <Box>
-            <h2 className="text-center mt-5 mb-5">Most popular Movies</h2>
+            <Typography variant="h3"> {movie.title} </Typography>
             <Box>
                 <main>
                     {movie ? (
@@ -67,6 +67,11 @@ const CardInfo = () => {
                             className="viewtrailer"
                             style={{
                                 backgroundImage: `url("${IMAGE_PATH}${movie.backdrop_path}")`,
+                                backgroundRepeat: "no-repeat",
+                                backgroundSize: "contain",
+                                height: 1200,
+                                width: 1000,
+                                paddingTop: 50
                             }}
                         >
                             {playing ? (
@@ -90,7 +95,7 @@ const CardInfo = () => {
                                             },
                                         }}
                                     />
-                                    <Button onClick={() => setPlaying(false)} className="boton">
+                                    <Button onClick={() => setPlaying(false)} className="boton" sx={{ backgroundColor: 'primary.button' }}>
                                         Close
                                     </Button>
                                 </>
@@ -98,7 +103,7 @@ const CardInfo = () => {
                                 <Box className="container">
                                     <Box className="">
                                         {trailer ? (
-                                            <Button
+                                            <Button sx={{ backgroundColor: 'primary.button' }}
                                                 className="boton"
                                                 onClick={() => setPlaying(true)}
                                                 type="button"
