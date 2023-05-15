@@ -108,7 +108,7 @@ const Home = () => {
                             className="col-md-4 mb-3"
                             onClick={() => selectMovie(movie)}
                         >
-                            <Card sx={{ maxWidth: 600 }}>
+                            <Card sx={{ maxWidth: 1200 }}>
                                 <CardActionArea component={Link} to={"/cardinfo?id=" + movie.id}>
                                     <CardMedia
                                         component="img"
@@ -117,10 +117,10 @@ const Home = () => {
                                         src={`${URL_IMAGE + movie.poster_path}`}
                                     />
                                     <CardContent>
-                                        <Typography gutterBottom variant="h5" component="div">
+                                        <Typography gutterBottom variant="h7" component="div">
                                             {movie.title}
                                         </Typography>
-                                        <Box sx={{ marginRight: 1, display: 'flex', marginLeft: 2 }}>
+                                        <Box sx={{ display: 'flex', marginLeft: 2 }}>
                                             <Typography gutterBottom variant="h7" component="div">
                                                 {movie.vote_average}
                                             </Typography>

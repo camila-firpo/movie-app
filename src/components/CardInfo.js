@@ -68,9 +68,9 @@ const CardInfo = () => {
                             style={{
                                 backgroundImage: `url("${IMAGE_PATH}${movie.backdrop_path}")`,
                                 backgroundRepeat: "no-repeat",
-                                backgroundSize: "contain",
-                                height: 1200,
-                                width: 1000,
+                                backgroundSize: "cover",
+                                height: 800,
+                                // width: 1000,
                                 paddingTop: 50
                             }}
                         >
@@ -100,7 +100,7 @@ const CardInfo = () => {
                                     </Button>
                                 </>
                             ) : (
-                                <Box className="container">
+                                <Box className="container" sx={{ paddingTop: 50 }}>
                                     <Box className="">
                                         {trailer ? (
                                             <Button sx={{ backgroundColor: 'primary.button' }}
@@ -113,13 +113,26 @@ const CardInfo = () => {
                                         ) : (
                                             "Sorry, no trailer available"
                                         )}
-                                        <h1 className="text-white">{movie.title}</h1>
-                                        <p className="text-white">{movie.overview}</p>
+                                        <Typography className="text-white" variant="h5">{movie.original_title}</Typography>
+                                        <Typography className="text-white">{movie.overview}</Typography>
+                                        <Box>
+                                            <Box sx={{ marginRight: 1, display: 'flex', marginLeft: 2 }}>
+                                                <Typography className="text-white" variant="h7" component="div">
+                                                    {movie.vote_average}
+                                                </Typography>
+                                                <Box>
+                                                    <StarIcon sx={{ color: 'primary.star' }}></StarIcon>
+                                                </Box>
+                                            </Box>
+                                        </Box>
+                                        <Typography className="text-white">Release date: {movie.release_date}</Typography>
+                                        <Typography className="text-white">Original language: {movie.original_language}</Typography>
                                     </Box>
                                 </Box>
                             )}
                         </Box>
                     ) : null}
+
                 </main>
             </Box>
         </Box>
