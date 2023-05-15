@@ -8,9 +8,10 @@ function App() {
   return (
     <BrowserRouter>
       <div>
-        <Home />
+
         <Routes>
-          <Route path="/cardinfo" component={CardInfo} />
+          <Route path="/" element={<Home />} />
+          <Route path="/cardinfo" element={<CardInfo />} />
         </Routes>
       </div>
     </BrowserRouter>

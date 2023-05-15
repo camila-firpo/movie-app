@@ -1,10 +1,10 @@
+import * as React from 'react';
 import { useEffect } from 'react';
 import axios from 'axios'
-// import './App.css';
+import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import YouTube from 'react-youtube';
 
-import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -22,34 +22,9 @@ const CardInfo = () => {
     const URL_IMAGE = "https://image.tmdb.org/t/p/original";
 
     // variables de estado
-    const [movies, setMovies] = useState([]);
-    const [searchKey, setSearchKey] = useState("");
-    //const [selectedMovie, setSelectedMovie] = useState({})
     const [trailer, setTrailer] = useState(null);
     const [movie, setMovie] = useState({ title: "Loading Movies" });
     const [playing, setPlaying] = useState(false);
-
-    // funcion para realizar la peticion get a la api
-    const fetchMovies = async (searchKey) => {
-        const type = searchKey ? "search" : "discover";
-        const {
-            data: { results },
-        } = await axios.get(`${API_URL}/${type}/movie`, {
-            params: {
-                api_key: API_KEY,
-                query: searchKey,
-            },
-        });
-        //console.log('data',results);
-        //setSelectedMovie(results[0])
-
-        setMovies(results);
-        setMovie(results[0]);
-
-        if (results.length) {
-            await fetchMovie(results[3].id);
-        }
-    };
 
     // funcion para la peticion de un solo objeto y mostrar en reproductor de videos
     const fetchMovie = async (id) => {
@@ -66,45 +41,25 @@ const CardInfo = () => {
             );
             setTrailer(trailer ? trailer : data.videos.results[0]);
         }
-        //return data
         setMovie(data);
     };
 
     const selectMovie = async (movie) => {
-        // const data = await fetchMovie(movie.id)
-        // console.log(data);
-        // setSelectedMovie(movie)
         fetchMovie(movie.id);
-
         setMovie(movie);
         window.scrollTo(0, 0);
     };
 
-    // funcion para buscar peliculas
-    const searchMovies = (e) => {
-        e.preventDefault();
-        fetchMovies(searchKey);
-    };
+    const search = useLocation().search;
+    const searchParams = new URLSearchParams(search)
 
     useEffect(() => {
-        fetchMovies();
+        fetchMovie(searchParams.get('id'));
     }, []);
 
     return (
         <Box>
             <h2 className="text-center mt-5 mb-5">Most popular Movies</h2>
-
-            {/* el buscador */}
-            <form className="container mb-4" onSubmit={searchMovies}>
-                <input
-                    type="text"
-                    placeholder="Search"
-                    onChange={(e) => setSearchKey(e.target.value)}
-                />
-                <Button sx={{ backgroundColor: 'primary.button' }}>Search</Button>
-            </form>
-
-            {/* esto es por prueba */}
             <Box>
                 <main>
                     {movie ? (

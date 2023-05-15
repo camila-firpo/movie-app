@@ -24,7 +24,6 @@ const Home = () => {
     // variables de estado
     const [movies, setMovies] = useState([]);
     const [searchKey, setSearchKey] = useState("");
-    //const [selectedMovie, setSelectedMovie] = useState({})
     const [trailer, setTrailer] = useState(null);
     const [movie, setMovie] = useState({ title: "Loading Movies" });
     const [playing, setPlaying] = useState(false);
@@ -40,8 +39,6 @@ const Home = () => {
                 query: searchKey,
             },
         });
-        //console.log('data',results);
-        //setSelectedMovie(results[0])
 
         setMovies(results);
         setMovie(results[0]);
@@ -71,9 +68,6 @@ const Home = () => {
     };
 
     const selectMovie = async (movie) => {
-        // const data = await fetchMovie(movie.id)
-        // console.log(data);
-        // setSelectedMovie(movie)
         fetchMovie(movie.id);
 
         setMovie(movie);
@@ -115,7 +109,7 @@ const Home = () => {
                             onClick={() => selectMovie(movie)}
                         >
                             <Card sx={{ maxWidth: 600 }}>
-                                <CardActionArea component={Link} to="/cardinfo">
+                                <CardActionArea component={Link} to={"/cardinfo?id=" + movie.id}>
                                     <CardMedia
                                         component="img"
                                         alt="Movie"

@@ -31,7 +31,7 @@ Arquitectura
 
 The Movie Database API3
 ReactJS
-MUI
+Material UI
 
 
 Manual de la aplicación 
