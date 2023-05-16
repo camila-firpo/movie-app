@@ -13,6 +13,8 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import StarIcon from '@mui/icons-material/Star';
 
+import '../cards.css';
+
 const CardInfo = () => {
     const API_URL = "https://api.themoviedb.org/3";
     const API_KEY = "4f5f43495afcc67e9553f6c684a82f84";
@@ -113,6 +115,7 @@ const CardInfo = () => {
                                         ) : (
                                             "Sorry, no trailer available"
                                         )}
+                                        <div class="leyenda">
                                         <Typography className="text-white" variant="h5">{movie.original_title}</Typography>
                                         <Typography className="text-white">{movie.overview}</Typography>
                                         <Box>
@@ -127,6 +130,7 @@ const CardInfo = () => {
                                         </Box>
                                         <Typography className="text-white">Release date: {movie.release_date}</Typography>
                                         <Typography className="text-white">Original language: {movie.original_language}</Typography>
+                                        </div>
                                     </Box>
                                 </Box>
                             )}

@@ -11,7 +11,11 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import StarIcon from '@mui/icons-material/Star';
+import { Input } from '@mui/material';
 import { Link } from 'react-router-dom';
+
+import "../index.css";
+import { LineWeight } from '@mui/icons-material';
 
 const Home = () => {
     const API_URL = "https://api.themoviedb.org/3";
@@ -86,19 +90,31 @@ const Home = () => {
 
     return (
         <Box>
-            <h2 className="text-center mt-5 mb-5">Most popular Movies</h2>
-
+            <div>
+                <h2 className="text-center mt-5 mb-5 titulo" 
+                >MOST POPULAR MOVIES</h2>
+            </div>
             {/* buscador */}
             <form className="container mb-4" onSubmit={searchMovies}>
-                <input
-                    type="text"
-                    placeholder="Search"
-                    onChange={(e) => setSearchKey(e.target.value)}
-                />
-                <Button sx={{ backgroundColor: 'primary.button' }}>Search</Button>
+                <div id="searchBar" class="input-group mb-3">
+                    <input  sx={{
+                            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                            border: "0px solid #000000",
+                            borderRadius: "0 0 0 0"
+                            }
+                        }
+                    } type="text" placeholder="Search" onChange={(e) => setSearchKey(e.target.value)} />
+                    <div class="input-group-append">
+                        <Button sx={{ 
+                            fontWeight: "bold",
+                            backgroundColor: 'primary.button',
+                            "border-top-left-radius": "0px",
+                            "border-bottom-left-radius": "0px"
+                            
+                            }} id="searchButton">Search</Button>
+                    </div>
+                </div>
             </form>
-
-
             {/* contenedor para mostrar los posters de las peliculas */}
             <Box className="container mt-3">
                 <Box className="row">
