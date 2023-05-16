@@ -1,6 +1,17 @@
-Nombre de la APP
+**Nombre de la APP**
 
-Introducción 
+1. Descripción del proyecto
+2. Introducción 
+3. Funcionalidades
+4. Requerimientos no funcionales
+5. Arquitectura
+6. Manual de usuario
+7. Acerca de ...
+8. Autores del proyecto
+
+**Descripción del proyecto**
+
+**Introducción** 
 
 La transmisión por streaming, también llamada transmisión en directo, en continuo o en descarga continua, es un método de distribución de contenidos multimedia (audiovisuales) a través de redes informáticas, que transmite el contenido al instante mismo en que es consumido, sin que deba descargarse y almacenarse previamente. El término streaming proviene del inglés stream (“chorro” o “arroyo”) y hace alusión a la transmisión ininterrumpida del contenido audiovisual.
 
@@ -10,31 +21,30 @@ Para tener acceso a este tipo de servicios se necesita una conexión a internet 
 
 Fuente URL: (https://concepto.de/streaming/)
 
-Acerca de ...
+
+**Funcionalidades**
+
+1. Busqueda de títulos 
+2. Listar por títulos
+3. Filtrar por categoría 
+4. Ver información de películas/series
+5. Reproducción de películas/series
+6. Reproducción de triler
+
+**Requerimientos no Funcionales**
+
+- Conexión a internet
+
+**Arquitectura**
+
+- The Movie Database API3
+- ReactJS
+- Material UI
+
+
+**Manual de usuario**
+
+**Acerca de ...**
 
 Esta aplicación web está destinada al público en general para poder disfrutar de una variada categoria de títulos. El uso de esta plataforma te permite navegar intuitivamente y acceder a una gran selección de peliculas y series de todo el mundo.
-
-Requerimientos Funcionales
-
-1-Busqueda de títulos 
-2-Listar por títulos
-3-Filtrar por categoría 
-4-Ver información de películas/series
-5-Reproducción de películas/series
-6-Reproducción de triler
-
-Requerimientos no Funcionales
-
-Conexión a internet
-
-Arquitectura
-
-The Movie Database API3
-ReactJS
-Material UI
-
-
-Manual de la aplicación 
-
-
 
