@@ -92,13 +92,13 @@ const Home = () => {
     return (
         <Box>
             <form className="container mb-4" >
-                <div>
+                <Box>
                     <h2 className="text-center mt-5 mb-5 titulo"
                     >MOST POPULAR MOVIES</h2>
-                </div>
+                </Box>
                 {/* buscador */}
                 <div id="searchBar" className="input-group mb-3">
-                    <input sx={{
+                    <Input sx={{
                         "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
                             border: "0px solid #000000",
                             borderRadius: "0 0 0 0"
