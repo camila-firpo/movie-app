@@ -27,7 +27,7 @@ const Home = () => {
 
     // variables de estado
     const [movies, setMovies] = useState([]);
-    const [searchKey, setSearchKey] = useState("");
+    const [searchKey, setSearchKey] = useState("discover");
     const [trailer, setTrailer] = useState(null);
     const [movie, setMovie] = useState({ title: "Loading Movies" });
     const [playing, setPlaying] = useState(false);
@@ -85,33 +85,34 @@ const Home = () => {
     };
 
     useEffect(() => {
-        fetchMovies();
+         fetchMovies();
+
     }, []);
 
     return (
         <Box>
-            <div>
-                <h2 className="text-center mt-5 mb-5 titulo" 
-                >MOST POPULAR MOVIES</h2>
-            </div>
-            {/* buscador */}
-            <form className="container mb-4" onSubmit={searchMovies}>
-                <div id="searchBar" class="input-group mb-3">
-                    <input  sx={{
-                            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            <form className="container mb-4" >
+                <div>
+                    <h2 className="text-center mt-5 mb-5 titulo"
+                    >MOST POPULAR MOVIES</h2>
+                </div>
+                {/* buscador */}
+                <div id="searchBar" className="input-group mb-3">
+                    <input sx={{
+                        "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
                             border: "0px solid #000000",
                             borderRadius: "0 0 0 0"
-                            }
                         }
-                    } type="text" placeholder="Search" onChange={(e) => setSearchKey(e.target.value)} />
-                    <div class="input-group-append">
-                        <Button sx={{ 
+                    }}
+                        type="text" placeholder="Search" onChange={(e) => setSearchKey(e.target.value)} />
+                    <div className="input-group-append">
+                        <Button onClick={searchMovies} sx={{
                             fontWeight: "bold",
                             backgroundColor: 'primary.button',
                             "border-top-left-radius": "0px",
                             "border-bottom-left-radius": "0px"
-                            
-                            }} id="searchButton">Search</Button>
+
+                        }} id="searchButton">Search</Button>
                     </div>
                 </div>
             </form>
