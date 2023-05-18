@@ -5,9 +5,6 @@ import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import YouTube from 'react-youtube';
 
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
@@ -64,6 +61,8 @@ const CardInfo = () => {
         <Box>
             <Typography variant="h3"> {movie.title} </Typography>
             <Box>
+
+            <div style={{display: 'flex', justifyContent: 'flex-end'}}><a href='./' class="menu"><Button sx={{ backgroundColor: 'primary.button', margin: 2}}>HOME</Button></a></div>
                 <main>
                     {movie ? (
                         <Box
