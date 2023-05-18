@@ -57,6 +57,7 @@ const CardInfo = () => {
 
     useEffect(() => {
         fetchMovie(searchParams.get('id'));
+        //fetchMovie()
     }, []);
 
     return (
