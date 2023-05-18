@@ -63,6 +63,12 @@ Para tener acceso a este tipo de servicios se necesita una conexión a internet 
 
 **<h3 id="MU">Manual de usuario</h3>**
 
+Accediendo a www.abcd.com podrás visualizar la página de inicio de ...  
+ //imagen de pagina principal con numeros en acciones   
+ 
+<img src="imgHTML.png" alt="Imagen con HTML" width="200" height="200">
+
+![imagen con markdown](imgM.png)
 
 
 [**volver al menu**](#inicio)
