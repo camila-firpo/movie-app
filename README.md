@@ -9,7 +9,7 @@
 4. [**Requerimientos no funcionales**](#RnF)
 5. [**Arquitectura**](#Arq)
 6. [**Instalación y configuración**](#IC)
-7. [**Manual de usuario**](#MU)
+7. [**Mockups y mapa de navegación**](#MM)
 8. [**Acerca de ...**](#About)
 9. [**Autores del proyecto**](#Nosotros)
 
@@ -124,12 +124,13 @@ En la terminal o consola:
 
 [**volver al menu**](#inicio)
 
-**<h3 id="MU">Manual de usuario</h3>**
+**<h3 id="MM">Mockups y mapa de anvegacion</h3>**
 
-Accediendo a www.abcd.com podrás visualizar la página de inicio de ...  
- //imagen de pagina principal con numeros en acciones   
- 
-<img src="imgHTML.png" alt="Imagen con HTML" width="200" height="200">
+Mockups  
+Realizado en Figma: (www.figma.com)
+
+Mapa de navegación  
+Realizado en DiagramsNet: (https://app.diagrams.net/)
 
 
 [**volver al menu**](#inicio)
