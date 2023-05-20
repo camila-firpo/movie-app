@@ -1,4 +1,4 @@
-<div style="background-color: #f2f2f2; padding: 20px;">
+<div style="background-color: #ED826D; padding: 20px;">
 
 **<h3 id="inicio">Nombre de la APP</h3>**
 <img src="logo.png" alt="Logo de App" width="200" height="200">
@@ -126,7 +126,9 @@ En la terminal o consola:
 
 **<h3 id="MM">Mockups y mapa de anvegacion</h3>**
 
-Mockups  
+Mockups
+Para visualizar la estructura de nuestras ventanas de navegación:
+https://www.figma.com/file/77LF3R9g5kPv8tOTPLKMQF/Untitled?type=design&node-id=0%3A1&t=yJ1GwQD5ctjBxqyn-1  
 Realizado en Figma: (www.figma.com)
 
 Mapa de navegación  

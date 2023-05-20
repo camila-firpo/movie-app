@@ -9,6 +9,8 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import StarIcon from '@mui/icons-material/Star';
+import Header from './Header';
+import Footer from './Footer';
 
 import '../cards.css';
 
@@ -59,9 +61,8 @@ const CardInfo = () => {
 
     return (
         <Box>
-            <Typography variant="h3"> {movie.title} </Typography>
-            <Box>
-
+            <Box sx={{mx: 4}}>
+             <Header/>
             <div style={{display: 'flex', justifyContent: 'flex-end'}}><a href='./' class="menu"><Button sx={{ backgroundColor: 'primary.button', margin: 2}}>HOME</Button></a></div>
                 <main>
                     {movie ? (
@@ -139,6 +140,7 @@ const CardInfo = () => {
 
                 </main>
             </Box>
+            <Footer/>
         </Box>
     );
 }

@@ -14,8 +14,9 @@ import StarIcon from '@mui/icons-material/Star';
 import { Input } from '@mui/material';
 import { Link } from 'react-router-dom';
 
+import Header from './Header';
+import Footer from './Footer';
 import "../index.css";
-import { LineWeight } from '@mui/icons-material';
 
 const Home = () => {
     const API_URL = "https://api.themoviedb.org/3";
@@ -92,12 +93,8 @@ const Home = () => {
     return (
         <Box>
             <form className="container mb-4" >
-                <Box>
-                    <h2 className="text-center mt-5 mb-5 titulo"
-                    >MOST POPULAR MOVIES</h2>
-                </Box>
-                {/* buscador */}
-                <div id="searchBar" className="input-group mb-3">
+               <Header/>                {/* buscador */}
+                <div id="searchBar" className="input-group my-2">
                     <Input sx={{
                         "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
                             border: "0px solid #000000",
@@ -152,8 +149,8 @@ const Home = () => {
                     ))}
                 </Box>
             </Box>
+            <Footer/>
         </Box>
     );
-
 }
 export default Home;   
