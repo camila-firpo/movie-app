@@ -1,0 +1,16 @@
+a {
+    font-size: 28px;
+    padding-top: 2px;
+    display: block;
+}
+
+a:hover {
+    font-size: 18px;
+}
+
+p {
+    color: cornflowerblue;
+    font-size: large;
+    padding-top: 10px;
+    padding-left: 55px;
+}
