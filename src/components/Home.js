@@ -95,21 +95,15 @@ const Home = () => {
             <form className="container mb-4" >
                 <Header />                {/* buscador */}
                 <Box id="searchBar" className="input-group my-2">
-                    <Input
-                        sx={{
-                            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                                border: "0px solid #000000",
-                                borderRadius: "0 0 0 0"
-                            }
-                        }}
-                        type="text" placeholder="Search" onChange={(e) => setSearchKey(e.target.value)} />
+                    <Input type="text" placeholder="Search" onChange={(e) => setSearchKey(e.target.value)} />
                     <Box className="input-group-append">
                         <Button onClick={searchMovies} sx={{
                             fontWeight: "bold",
                             backgroundColor: 'primary.button',
                             "border-top-left-radius": "0px",
-                            "border-bottom-left-radius": "0px"
-
+                            "border-bottom-left-radius": "0px",
+                            marginLeft: '10px',
+                            position: 'right'
                         }} id="searchButton">Search</Button>
                     </Box>
                 </Box>
@@ -132,7 +126,7 @@ const Home = () => {
                                         src={`${URL_IMAGE + movie.poster_path}`}
                                     />
                                     <CardContent>
-                                        <Typography gutterBottom variant="h15" component="div" color="white">
+                                        <Typography gutterBottom variant="subtitle" component="div" color="white">
                                             {movie.title}
                                         </Typography>
                                         <Box sx={{ display: 'flex', marginLeft: 2 }}>

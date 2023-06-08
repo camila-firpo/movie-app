@@ -98,7 +98,7 @@ const CardInfo = () => {
                                             },
                                         }}
                                     />
-                                    <Button onClick={() => setPlaying(false)} className="boton" sx={{ backgroundColor: 'primary.button' }}>
+                                    <Button onClick={() => setPlaying(false)} className="boton" sx={{ backgroundColor: 'primary.button', fontWeight: "bold" }}>
                                         Close
                                     </Button>
                                 </>
