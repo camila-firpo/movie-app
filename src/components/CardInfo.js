@@ -61,9 +61,9 @@ const CardInfo = () => {
 
     return (
         <Box>
-            <Box sx={{mx: 4}}>
-             <Header/>
-            <div style={{display: 'flex', justifyContent: 'flex-end'}}><a href='./' class="menu"><Button sx={{ backgroundColor: 'primary.button', margin: 2}}>HOME</Button></a></div>
+            <Box sx={{ mx: 4 }}>
+                <Header />
+                <div style={{ display: 'flex', justifyContent: 'flex-end' }}><a href='./' class="menu"><Button sx={{ backgroundColor: 'primary.button', margin: 2 }}>HOME</Button></a></div>
                 <main>
                     {movie ? (
                         <Box
@@ -84,8 +84,8 @@ const CardInfo = () => {
                                         className="reproductor container"
                                         containerClassName={"youtube-container amru"}
                                         opts={{
-                                            width: "100%",
-                                            height: "100%",
+                                            width: "800px",
+                                            height: "800px",
                                             playerVars: {
                                                 autoplay: 1,
                                                 controls: 0,
@@ -117,20 +117,20 @@ const CardInfo = () => {
                                             "Sorry, no trailer available"
                                         )}
                                         <div class="leyenda">
-                                        <Typography className="text-white" variant="h5">{movie.original_title}</Typography>
-                                        <Typography className="text-white">{movie.overview}</Typography>
-                                        <Box>
-                                            <Box sx={{ marginRight: 1, display: 'flex', marginLeft: 2 }}>
-                                                <Typography className="text-white" variant="h7" component="div">
-                                                    {movie.vote_average}
-                                                </Typography>
-                                                <Box>
-                                                    <StarIcon sx={{ color: 'primary.star' }}></StarIcon>
+                                            <Typography className="text-white" variant="h5">{movie.original_title}</Typography>
+                                            <Typography className="text-white">{movie.overview}</Typography>
+                                            <Box>
+                                                <Box sx={{ marginRight: 1, display: 'flex', marginLeft: 2 }}>
+                                                    <Typography className="text-white" variant="h7" component="div">
+                                                        {movie.vote_average}
+                                                    </Typography>
+                                                    <Box>
+                                                        <StarIcon sx={{ color: 'primary.star' }}></StarIcon>
+                                                    </Box>
                                                 </Box>
                                             </Box>
-                                        </Box>
-                                        <Typography className="text-white">Release date: {movie.release_date}</Typography>
-                                        <Typography className="text-white">Original language: {movie.original_language}</Typography>
+                                            <Typography className="text-white">Release date: {movie.release_date}</Typography>
+                                            <Typography className="text-white">Original language: {movie.original_language}</Typography>
                                         </div>
                                     </Box>
                                 </Box>
@@ -140,7 +140,7 @@ const CardInfo = () => {
 
                 </main>
             </Box>
-            <Footer/>
+            <Footer />
         </Box>
     );
 }

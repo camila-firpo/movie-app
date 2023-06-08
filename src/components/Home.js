@@ -86,23 +86,24 @@ const Home = () => {
     };
 
     useEffect(() => {
-         fetchMovies();
+        fetchMovies();
 
     }, []);
 
     return (
         <Box>
             <form className="container mb-4" >
-               <Header/>                {/* buscador */}
-                <div id="searchBar" className="input-group my-2">
-                    <Input sx={{
-                        "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                            border: "0px solid #000000",
-                            borderRadius: "0 0 0 0"
-                        }
-                    }}
+                <Header />                {/* buscador */}
+                <Box id="searchBar" className="input-group my-2">
+                    <Input
+                        sx={{
+                            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                                border: "0px solid #000000",
+                                borderRadius: "0 0 0 0"
+                            }
+                        }}
                         type="text" placeholder="Search" onChange={(e) => setSearchKey(e.target.value)} />
-                    <div className="input-group-append">
+                    <Box className="input-group-append">
                         <Button onClick={searchMovies} sx={{
                             fontWeight: "bold",
                             backgroundColor: 'primary.button',
@@ -110,8 +111,8 @@ const Home = () => {
                             "border-bottom-left-radius": "0px"
 
                         }} id="searchButton">Search</Button>
-                    </div>
-                </div>
+                    </Box>
+                </Box>
             </form>
             {/* contenedor para mostrar los posters de las peliculas */}
             <Box className="container mt-3">
@@ -122,20 +123,20 @@ const Home = () => {
                             className="col-md-4 mb-3"
                             onClick={() => selectMovie(movie)}
                         >
-                            <Card sx={{ maxWidth: 1200 }}>
+                            <Card sx={{ maxWidth: 1300, backgroundColor: "primary.main" }}>
                                 <CardActionArea component={Link} to={"/cardinfo?id=" + movie.id}>
                                     <CardMedia
                                         component="img"
                                         alt="Movie"
-                                        height="250"
+                                        height="450"
                                         src={`${URL_IMAGE + movie.poster_path}`}
                                     />
                                     <CardContent>
-                                        <Typography gutterBottom variant="h7" component="div">
+                                        <Typography gutterBottom variant="h15" component="div" color="white">
                                             {movie.title}
                                         </Typography>
                                         <Box sx={{ display: 'flex', marginLeft: 2 }}>
-                                            <Typography gutterBottom variant="h7" component="div">
+                                            <Typography gutterBottom variant="h7" component="div" color="white">
                                                 {movie.vote_average}
                                             </Typography>
                                             <Box>
@@ -149,7 +150,7 @@ const Home = () => {
                     ))}
                 </Box>
             </Box>
-            <Footer/>
+            <Footer />
         </Box>
     );
 }
