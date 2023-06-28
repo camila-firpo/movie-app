@@ -115,7 +115,7 @@ En la terminal o consola:
 - En mi sistema: creo una carpeta donde instalaré la aplicación web. Abro la terminal cmd y me paro dentro de la carpeta donde quiero clonar el repositorio.
 - Para clonar el repositorio utilizo el siguiente comando: git clone https://github.com/camila-firpo/movie-app.git (Este link depende de cómo elegimos clonar el repositorio, en este caso HTTP). En caso de que hayamos elegido el método de .zip, simplemente descomprimimos el archivo donde querramos tener la aplicación. 
 - En el IDE de preferencia (recomendamos Visual Studio Code) abrimos la carpeta raíz donde se encuentra la aplicación y seguido, abrimos una nueva terminal en esa ubicación.
-- Escribir el siguiente comando: npm intall. Este comando nos instalará todas las librerías que permiten visualizar nuestra aplicación de forma correcta.
+- Escribir el siguiente comando: npm install. Este comando nos instalará todas las librerías que permiten visualizar nuestra aplicación de forma correcta.
 - Ahora solo queda correr la aplicación con el siguiente comando: npm start.
 
 ¡A disfrutar!
